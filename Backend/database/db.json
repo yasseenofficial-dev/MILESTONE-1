@@ -1,0 +1,58 @@
+{
+  "invitation": {
+    "eventName": "Tech Networking Night",
+    "date": "20 June 2026",
+    "time": "6:00 PM",
+    "venue": "Cairo Business Hall",
+    "dressCode": "Smart Casual",
+    "agenda": "Welcome, Networking Session, Dinner, Closing Speech"
+  },
+  "messages": [
+    {
+      "id": 1,
+      "title": "Arrival Information",
+      "text": "Welcome! Please use Gate B for entry.",
+      "status": "Seen"
+    },
+    {
+      "id": 2,
+      "title": "Schedule Update",
+      "text": "Dinner will now start at 8:00 PM.",
+      "status": "Received"
+    },
+    {
+      "id": 3,
+      "title": "Follow-Up Reminder",
+      "text": "Reminder: Please check the updated event schedule.",
+      "status": "Follow-up Sent"
+    }
+  ],
+  "rsvps": [
+    {
+      "id": 1781785764292,
+      "attendance": "Attending",
+      "dietaryPreference": "Vegan",
+      "specialRequirements": "",
+      "submittedAt": "2026-06-18T12:29:24.292Z"
+    }
+  ],
+  "checkIns": [
+    {
+      "id": 1781785771274,
+      "guestName": "Ahmed El Sergani",
+      "qrCode": "GUEST-2026-001",
+      "checkedInAt": "2026-06-18T12:29:31.274Z"
+    }
+  ],
+  "feedback": [
+    {
+      "id": 1781785783999,
+      "overallExperience": "Excellent",
+      "foodRating": "Good",
+      "venueRating": "Poor",
+      "organizationRating": "Good",
+      "comments": "great time",
+      "submittedAt": "2026-06-18T12:29:43.999Z"
+    }
+  ]
+}
