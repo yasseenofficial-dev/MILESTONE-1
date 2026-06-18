@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  root: path.join(__dirname, 'client'),
+  root: path.join(__dirname, 'Frontend-ys'),
   plugins: [react()],
   server: {
     port: 5173,
@@ -18,7 +18,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: path.join(__dirname, 'client', 'dist'),
+    outDir: path.join(__dirname, 'Frontend-ys', 'dist'),
     emptyOutDir: true,
   },
 });
