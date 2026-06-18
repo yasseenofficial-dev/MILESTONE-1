@@ -1,0 +1,283 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  firstName    String
+  lastName     String
+  phone        String?
+  companyName  String?
+  role         String   @default("EVENT_ORGANIZER")
+  isActive     Boolean  @default(true)
+  createdById  String?
+  eventId      String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  createdBy           User?                @relation("ManagedAccounts", fields: [createdById], references: [id], onDelete: SetNull)
+  managedAccounts     User[]               @relation("ManagedAccounts")
+  events              Event[]
+  bookingApplications BookingApplication[]
+}
+
+model Venue {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  address     String
+  city        String
+  country     String   @default("Egypt")
+  capacity    Int
+  pricePerDay Float
+  amenities   String   @default("[]")
+  images      String   @default("[]")
+  latitude    Float?
+  longitude   Float?
+  rating      Float    @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  events              Event[]
+  bookingApplications BookingApplication[]
+}
+
+model Event {
+  id                String   @id @default(uuid())
+  organizerId       String
+  title             String
+  description       String?
+  eventType         String
+  status            String   @default("DRAFT")
+  startDate         DateTime
+  endDate           DateTime
+  expectedAttendees Int?
+  venueId           String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  organizer           User                 @relation(fields: [organizerId], references: [id], onDelete: Cascade)
+  venue               Venue?               @relation(fields: [venueId], references: [id], onDelete: SetNull)
+  stakeholders        Stakeholder[]
+  bookingApplications BookingApplication[]
+  tasks               Task[]
+  budgetCategories    BudgetCategory[]
+  expenses            Expense[]
+  floorPlans          FloorPlan[]
+  staff               Staff[]
+  eventVendors        EventVendor[]
+  sourcingRequests    SourcingRequest[]
+  guests              Guest[]
+  feedbacks           Feedback[]
+}
+
+model Stakeholder {
+  id        String   @id @default(uuid())
+  eventId   String
+  name      String
+  email     String?
+  phone     String?
+  role      String   @default("OTHER")
+  notes     String?
+  createdAt DateTime @default(now())
+
+  event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+}
+
+model BookingApplication {
+  id              String   @id @default(uuid())
+  eventId         String
+  venueId         String
+  organizerId     String
+  startDate       DateTime
+  endDate         DateTime
+  status          String   @default("PENDING")
+  message         String?
+  responseMessage String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  event     Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  venue     Venue @relation(fields: [venueId], references: [id], onDelete: Cascade)
+  organizer User  @relation(fields: [organizerId], references: [id], onDelete: Cascade)
+}
+
+model Task {
+  id          String   @id @default(uuid())
+  eventId     String
+  staffId     String?
+  title       String
+  description String?
+  status      String   @default("TODO")
+  priority    String   @default("MEDIUM")
+  dueDate     DateTime?
+  reminderAt  DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  event Event  @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  staff Staff? @relation(fields: [staffId], references: [id], onDelete: SetNull)
+}
+
+model BudgetCategory {
+  id            String @id @default(uuid())
+  eventId       String
+  name          String
+  plannedAmount Float
+
+  event    Event     @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  expenses Expense[]
+}
+
+model Expense {
+  id               String   @id @default(uuid())
+  eventId          String
+  budgetCategoryId String?
+  vendorId         String?
+  description      String
+  amount           Float
+  expenseDate      DateTime @default(now())
+  createdAt        DateTime @default(now())
+
+  event          Event           @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  budgetCategory BudgetCategory? @relation(fields: [budgetCategoryId], references: [id], onDelete: SetNull)
+  vendor         Vendor?         @relation(fields: [vendorId], references: [id], onDelete: SetNull)
+}
+
+model FloorPlan {
+  id         String   @id @default(uuid())
+  eventId    String
+  name       String
+  canvasData String   @default("{}")
+  width      Int      @default(800)
+  height     Int      @default(600)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+}
+
+model Staff {
+  id        String   @id @default(uuid())
+  eventId   String
+  name      String
+  email     String?
+  phone     String?
+  role      String
+  status    String   @default("ACTIVE")
+  createdAt DateTime @default(now())
+
+  event Event  @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  tasks Task[]
+}
+
+model Vendor {
+  id          String   @id @default(uuid())
+  name        String
+  category    String
+  email       String?
+  phone       String?
+  description String?
+  rating      Float    @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  eventVendors     EventVendor[]
+  sourcingRequests SourcingRequest[]
+  expenses         Expense[]
+}
+
+model EventVendor {
+  id             String  @id @default(uuid())
+  eventId        String
+  vendorId       String
+  status         String  @default("ACTIVE")
+  contractAmount Float?
+  notes          String?
+
+  event      Event      @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  vendor     Vendor     @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+  invoices   Invoice[]
+  deliveries Delivery[]
+}
+
+model SourcingRequest {
+  id          String    @id @default(uuid())
+  eventId     String
+  vendorId    String
+  title       String
+  description String?
+  status      String    @default("DRAFT")
+  budget      Float?
+  requestedAt DateTime  @default(now())
+  responseAt  DateTime?
+  quoteAmount Float?
+
+  event  Event  @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  vendor Vendor @relation(fields: [vendorId], references: [id], onDelete: Cascade)
+}
+
+model Delivery {
+  id            String    @id @default(uuid())
+  eventVendorId String
+  description   String
+  status        String    @default("SCHEDULED")
+  scheduledDate DateTime?
+  deliveredDate DateTime?
+  trackingNotes String?
+  createdAt     DateTime  @default(now())
+
+  eventVendor EventVendor @relation(fields: [eventVendorId], references: [id], onDelete: Cascade)
+}
+
+model Invoice {
+  id            String    @id @default(uuid())
+  eventVendorId String
+  invoiceNumber String
+  amount        Float
+  status        String    @default("DRAFT")
+  dueDate       DateTime?
+  paidDate      DateTime?
+  notes         String?
+  createdAt     DateTime  @default(now())
+
+  eventVendor EventVendor @relation(fields: [eventVendorId], references: [id], onDelete: Cascade)
+}
+
+model Guest {
+  id                String    @id @default(uuid())
+  eventId           String
+  name              String
+  email             String?
+  phone             String?
+  dietaryPreference String?
+  rsvpStatus        String    @default("PENDING")
+  plusOne           Boolean   @default(false)
+  invitationSentAt  DateTime?
+  rsvpAt            DateTime?
+  notes             String?
+  createdAt         DateTime  @default(now())
+
+  event     Event      @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  feedbacks Feedback[]
+}
+
+model Feedback {
+  id        String   @id @default(uuid())
+  eventId   String
+  guestId   String?
+  rating    Int
+  comment   String?
+  createdAt DateTime @default(now())
+
+  event Event  @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  guest Guest? @relation(fields: [guestId], references: [id], onDelete: SetNull)
+}
