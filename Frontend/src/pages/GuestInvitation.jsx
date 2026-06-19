@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function GuestInvitation() {
@@ -16,29 +17,57 @@ function GuestInvitation() {
       });
   }, []);
 
-  if (error) {
-    return <p>{error}</p>;
-  }
-
-  if (!invitation) {
-    return <p>Loading invitation...</p>;
-  }
-
   return (
-    <div>
-      <h1>Event Invitation</h1>
+    <div className="page">
+      <div className="page-header">
+        <Link className="back-link" to="/">
+          ← Back to main page
+        </Link>
 
-      <h2>{invitation.eventName}</h2>
+        <h1 className="page-title">Event Invitation</h1>
+        <p className="page-subtitle">
+          Review your official invitation details.
+        </p>
+      </div>
 
-      <p>Date: {invitation.date}</p>
+      {error && <div className="error-box">{error}</div>}
 
-      <p>Time: {invitation.time}</p>
+      {!invitation && !error && (
+        <div className="content-card">Loading invitation...</div>
+      )}
 
-      <p>Venue: {invitation.venue}</p>
+      {invitation && (
+        <div className="content-card">
+          <h2>{invitation.eventName}</h2>
 
-      <p>Dress Code: {invitation.dressCode}</p>
+          <div className="detail-list">
+            <div className="detail-item">
+              <span className="detail-label">Date</span>
+              <span className="detail-value">{invitation.date}</span>
+            </div>
 
-      <p>Agenda: {invitation.agenda}</p>
+            <div className="detail-item">
+              <span className="detail-label">Time</span>
+              <span className="detail-value">{invitation.time}</span>
+            </div>
+
+            <div className="detail-item">
+              <span className="detail-label">Venue</span>
+              <span className="detail-value">{invitation.venue}</span>
+            </div>
+
+            <div className="detail-item">
+              <span className="detail-label">Dress Code</span>
+              <span className="detail-value">{invitation.dressCode}</span>
+            </div>
+
+            <div className="detail-item">
+              <span className="detail-label">Agenda</span>
+              <span className="detail-value">{invitation.agenda}</span>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

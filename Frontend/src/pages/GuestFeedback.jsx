@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function GuestFeedback() {
@@ -33,91 +34,92 @@ function GuestFeedback() {
   }
 
   return (
-    <div>
-      <h1>Post-Event Feedback</h1>
+    <div className="page">
+      <div className="page-header">
+        <Link className="back-link" to="/">
+          ← Back to main page
+        </Link>
 
-      <p>Please complete the feedback form about your event experience.</p>
+        <h1 className="page-title">Post-Event Feedback</h1>
+        <p className="page-subtitle">
+          Help us improve future events by sharing your experience.
+        </p>
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <label>Overall Experience:</label>
-        <br />
-        <select
-          value={overallExperience}
-          onChange={(event) => setOverallExperience(event.target.value)}
-        >
-          <option value="">Select rating</option>
-          <option value="Excellent">Excellent</option>
-          <option value="Good">Good</option>
-          <option value="Average">Average</option>
-          <option value="Poor">Poor</option>
-        </select>
+      <div className="content-card">
+        <form className="form-grid" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Overall Experience</label>
+            <select
+              value={overallExperience}
+              onChange={(event) => setOverallExperience(event.target.value)}
+            >
+              <option value="">Select rating</option>
+              <option value="Excellent">Excellent</option>
+              <option value="Good">Good</option>
+              <option value="Average">Average</option>
+              <option value="Poor">Poor</option>
+            </select>
+          </div>
 
-        <br />
-        <br />
+          <div className="form-group">
+            <label>Food and Beverages</label>
+            <select
+              value={foodRating}
+              onChange={(event) => setFoodRating(event.target.value)}
+            >
+              <option value="">Select rating</option>
+              <option value="Excellent">Excellent</option>
+              <option value="Good">Good</option>
+              <option value="Average">Average</option>
+              <option value="Poor">Poor</option>
+            </select>
+          </div>
 
-        <label>Food and Beverages:</label>
-        <br />
-        <select
-          value={foodRating}
-          onChange={(event) => setFoodRating(event.target.value)}
-        >
-          <option value="">Select rating</option>
-          <option value="Excellent">Excellent</option>
-          <option value="Good">Good</option>
-          <option value="Average">Average</option>
-          <option value="Poor">Poor</option>
-        </select>
+          <div className="form-group">
+            <label>Venue</label>
+            <select
+              value={venueRating}
+              onChange={(event) => setVenueRating(event.target.value)}
+            >
+              <option value="">Select rating</option>
+              <option value="Excellent">Excellent</option>
+              <option value="Good">Good</option>
+              <option value="Average">Average</option>
+              <option value="Poor">Poor</option>
+            </select>
+          </div>
 
-        <br />
-        <br />
+          <div className="form-group">
+            <label>Organization</label>
+            <select
+              value={organizationRating}
+              onChange={(event) => setOrganizationRating(event.target.value)}
+            >
+              <option value="">Select rating</option>
+              <option value="Excellent">Excellent</option>
+              <option value="Good">Good</option>
+              <option value="Average">Average</option>
+              <option value="Poor">Poor</option>
+            </select>
+          </div>
 
-        <label>Venue:</label>
-        <br />
-        <select
-          value={venueRating}
-          onChange={(event) => setVenueRating(event.target.value)}
-        >
-          <option value="">Select rating</option>
-          <option value="Excellent">Excellent</option>
-          <option value="Good">Good</option>
-          <option value="Average">Average</option>
-          <option value="Poor">Poor</option>
-        </select>
+          <div className="form-group">
+            <label>Open Comments</label>
+            <textarea
+              value={comments}
+              onChange={(event) => setComments(event.target.value)}
+              placeholder="Write your comments here..."
+            />
+          </div>
 
-        <br />
-        <br />
+          <button className="primary-button" type="submit">
+            Submit Feedback
+          </button>
+        </form>
 
-        <label>Organization:</label>
-        <br />
-        <select
-          value={organizationRating}
-          onChange={(event) => setOrganizationRating(event.target.value)}
-        >
-          <option value="">Select rating</option>
-          <option value="Excellent">Excellent</option>
-          <option value="Good">Good</option>
-          <option value="Average">Average</option>
-          <option value="Poor">Poor</option>
-        </select>
-
-        <br />
-        <br />
-
-        <label>Open Comments:</label>
-        <br />
-        <textarea
-          value={comments}
-          onChange={(event) => setComments(event.target.value)}
-          placeholder="Write your comments here..."
-        />
-
-        <br />
-        <br />
-
-        <button type="submit">Submit Feedback</button>
-      </form>
-
-      <p>{message}</p>
+        {message && <div className="message-box">{message}</div>}
+      </div>
     </div>
   );
 }

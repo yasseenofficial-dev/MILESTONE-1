@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function GuestMessages() {
@@ -16,22 +17,26 @@ function GuestMessages() {
       });
   }, []);
 
-  if (error) {
-    return <p>{error}</p>;
-  }
-
   return (
-    <div>
-      <h1>Day-Of Communications</h1>
+    <div className="page">
+      <div className="page-header">
+        <Link className="back-link" to="/">
+          ← Back to main page
+        </Link>
 
-      <p>Here are the latest live updates from the event organizer.</p>
+        <h1 className="page-title">Day-Of Communications</h1>
+        <p className="page-subtitle">
+          Stay updated with live messages from the event organizer.
+        </p>
+      </div>
+
+      {error && <div className="error-box">{error}</div>}
 
       {messages.map((message) => (
-        <div key={message.id}>
+        <div className="message-card" key={message.id}>
           <h3>{message.title}</h3>
           <p>{message.text}</p>
-          <p>Status: {message.status}</p>
-          <hr />
+          <span className="status-pill">{message.status}</span>
         </div>
       ))}
     </div>

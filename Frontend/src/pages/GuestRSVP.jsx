@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 function GuestRSVP() {
@@ -29,57 +30,59 @@ function GuestRSVP() {
   }
 
   return (
-    <div>
-      <h1>RSVP</h1>
+    <div className="page">
+      <div className="page-header">
+        <Link className="back-link" to="/">
+          ← Back to main page
+        </Link>
 
-      <p>Please confirm whether you will attend the event.</p>
+        <h1 className="page-title">RSVP</h1>
+        <p className="page-subtitle">
+          Confirm your attendance and share any preferences.
+        </p>
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <label>Attendance Status:</label>
-        <br />
+      <div className="content-card">
+        <form className="form-grid" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Attendance Status</label>
+            <select
+              value={attendance}
+              onChange={(event) => setAttendance(event.target.value)}
+            >
+              <option value="">Select an option</option>
+              <option value="Attending">Attending</option>
+              <option value="Not Attending">Not Attending</option>
+              <option value="Maybe">Maybe</option>
+            </select>
+          </div>
 
-        <select
-          value={attendance}
-          onChange={(event) => setAttendance(event.target.value)}
-        >
-          <option value="">Select an option</option>
-          <option value="Attending">Attending</option>
-          <option value="Not Attending">Not Attending</option>
-          <option value="Maybe">Maybe</option>
-        </select>
+          <div className="form-group">
+            <label>Dietary Preferences</label>
+            <input
+              type="text"
+              value={dietaryPreference}
+              onChange={(event) => setDietaryPreference(event.target.value)}
+              placeholder="Example: Vegetarian, no nuts, halal"
+            />
+          </div>
 
-        <br />
-        <br />
+          <div className="form-group">
+            <label>Special Requirements</label>
+            <textarea
+              value={specialRequirements}
+              onChange={(event) => setSpecialRequirements(event.target.value)}
+              placeholder="Example: Wheelchair access, seating request"
+            />
+          </div>
 
-        <label>Dietary Preferences:</label>
-        <br />
+          <button className="primary-button" type="submit">
+            Submit RSVP
+          </button>
+        </form>
 
-        <input
-          type="text"
-          value={dietaryPreference}
-          onChange={(event) => setDietaryPreference(event.target.value)}
-          placeholder="Example: Vegetarian, no nuts, halal"
-        />
-
-        <br />
-        <br />
-
-        <label>Special Requirements:</label>
-        <br />
-
-        <textarea
-          value={specialRequirements}
-          onChange={(event) => setSpecialRequirements(event.target.value)}
-          placeholder="Example: Wheelchair access, seating request"
-        />
-
-        <br />
-        <br />
-
-        <button type="submit">Submit RSVP</button>
-      </form>
-
-      <p>{message}</p>
+        {message && <div className="message-box">{message}</div>}
+      </div>
     </div>
   );
 }

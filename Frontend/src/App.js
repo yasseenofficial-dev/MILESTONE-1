@@ -1,4 +1,7 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+
+import Home from "./pages/Home";
 import GuestInvitation from "./pages/GuestInvitation";
 import GuestRSVP from "./pages/GuestRSVP";
 import GuestMessages from "./pages/GuestMessages";
@@ -8,16 +11,9 @@ import GuestFeedback from "./pages/GuestFeedback";
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <nav>
-          <Link to="/invitation">Invitation</Link> |{" "}
-          <Link to="/rsvp">RSVP</Link> |{" "}
-          <Link to="/messages">Messages</Link> |{" "}
-          <Link to="/check-in">Check-In</Link> |{" "}
-          <Link to="/feedback">Feedback</Link>
-        </nav>
-
+      <div className="app-shell">
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/invitation" element={<GuestInvitation />} />
           <Route path="/rsvp" element={<GuestRSVP />} />
           <Route path="/messages" element={<GuestMessages />} />
