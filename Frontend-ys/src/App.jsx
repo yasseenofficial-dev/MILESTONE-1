@@ -3,6 +3,13 @@ import { useAuth } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import { Loading } from './components/ui';
 
+import GuestPortalPage from './pages/GuestPortalPage';
+import GuestInvitationPage from './pages/GuestInvitationPage';
+import GuestRSVPPage from './pages/GuestRSVPPage';
+import GuestMessagesPage from './pages/GuestMessagesPage';
+import GuestCheckInPage from './pages/GuestCheckInPage';
+import GuestFeedbackPage from './pages/GuestFeedbackPage';
+
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
@@ -48,6 +55,14 @@ function App() {
         <Route path="/bookings" element={<BookingsPage />} />
         <Route path="/accounts" element={<AccountsPage />} />
       </Route>
+
+      {/* Guest Portal — public, no auth required */}
+      <Route path="/guest" element={<GuestPortalPage />} />
+      <Route path="/guest/invitation" element={<GuestInvitationPage />} />
+      <Route path="/guest/rsvp" element={<GuestRSVPPage />} />
+      <Route path="/guest/messages" element={<GuestMessagesPage />} />
+      <Route path="/guest/check-in" element={<GuestCheckInPage />} />
+      <Route path="/guest/feedback" element={<GuestFeedbackPage />} />
 
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>

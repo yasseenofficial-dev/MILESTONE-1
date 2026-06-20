@@ -1,6 +1,281 @@
 {
-  "venueOwners": [],
-  "listings": [],
-  "bookingRequests": [],
-  "bookings": []
+  "venueOwners": [
+    {
+      "id": "vo-seed-001",
+      "ownerName": "Nadine Farouk",
+      "email": "nadine.farouk@venues.com",
+      "passwordHash": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+      "companyName": "Cairo Pop-up Spaces",
+      "phone": "+20 100 123 4567",
+      "createdAt": "2026-04-01T09:00:00.000Z",
+      "updatedAt": "2026-04-01T09:00:00.000Z"
+    },
+    {
+      "id": "vo-seed-002",
+      "ownerName": "Omar Khalil",
+      "email": "omar.khalil@venues.com",
+      "passwordHash": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+      "companyName": "Nile View Properties",
+      "phone": "+20 101 987 6543",
+      "createdAt": "2026-04-03T10:30:00.000Z",
+      "updatedAt": "2026-04-03T10:30:00.000Z"
+    }
+  ],
+  "listings": [
+    {
+      "id": "lst-seed-001",
+      "ownerId": "vo-seed-001",
+      "name": "Zamalek Rooftop Loft",
+      "description": "Airy rooftop space in Zamalek with skyline views, perfect for pop-up cafes and brand activations.",
+      "location": "Zamalek, Cairo",
+      "capacity": 80,
+      "dimensionsSqm": 150,
+      "amenities": ["WiFi", "Sound system", "Outdoor seating", "Kitchenette"],
+      "pricing": { "amount": 6000, "currency": "EGP", "unit": "per_day" },
+      "photos": [],
+      "floorPlans": [],
+      "availability": [
+        { "date": "2026-07-05", "status": "available" },
+        { "date": "2026-07-12", "status": "available" },
+        { "date": "2026-07-19", "status": "booked" }
+      ],
+      "status": "active",
+      "createdAt": "2026-04-02T09:00:00.000Z",
+      "updatedAt": "2026-06-01T09:00:00.000Z"
+    },
+    {
+      "id": "lst-seed-002",
+      "ownerId": "vo-seed-001",
+      "name": "Downtown Industrial Hall",
+      "description": "Converted warehouse with industrial-chic aesthetic, ideal for larger pop-up events and exhibitions.",
+      "location": "Downtown, Cairo",
+      "capacity": 200,
+      "dimensionsSqm": 400,
+      "amenities": ["WiFi", "Stage", "Loading dock", "Parking", "Air conditioning"],
+      "pricing": { "amount": 12000, "currency": "EGP", "unit": "per_day" },
+      "photos": [],
+      "floorPlans": [],
+      "availability": [
+        { "date": "2026-06-28", "status": "booked" },
+        { "date": "2026-07-05", "status": "available" },
+        { "date": "2026-07-12", "status": "available" }
+      ],
+      "status": "active",
+      "createdAt": "2026-04-05T09:00:00.000Z",
+      "updatedAt": "2026-05-20T09:00:00.000Z"
+    },
+    {
+      "id": "lst-seed-003",
+      "ownerId": "vo-seed-001",
+      "name": "Heliopolis Courtyard Garden",
+      "description": "Lush garden courtyard in Heliopolis. Great for intimate brunch pop-ups and outdoor fashion shows.",
+      "location": "Heliopolis, Cairo",
+      "capacity": 50,
+      "dimensionsSqm": 120,
+      "amenities": ["Garden", "Power outlets", "Restrooms", "Shaded seating"],
+      "pricing": { "amount": 3500, "currency": "EGP", "unit": "per_day" },
+      "photos": [],
+      "floorPlans": [],
+      "availability": [
+        { "date": "2026-07-10", "status": "available" }
+      ],
+      "status": "inactive",
+      "createdAt": "2026-04-06T11:00:00.000Z",
+      "updatedAt": "2026-06-10T11:00:00.000Z"
+    },
+    {
+      "id": "lst-seed-004",
+      "ownerId": "vo-seed-002",
+      "name": "Maadi Riverside Terrace",
+      "description": "Stunning Nile-facing terrace in Maadi. Perfect for sunset events, cocktail parties and photoshoots.",
+      "location": "Maadi, Cairo",
+      "capacity": 120,
+      "dimensionsSqm": 220,
+      "amenities": ["Nile view", "WiFi", "Bar setup", "Catering kitchen", "Parking"],
+      "pricing": { "amount": 9000, "currency": "EGP", "unit": "per_day" },
+      "photos": [],
+      "floorPlans": [],
+      "availability": [
+        { "date": "2026-07-04", "status": "available" },
+        { "date": "2026-07-11", "status": "available" },
+        { "date": "2026-07-18", "status": "available" }
+      ],
+      "status": "active",
+      "createdAt": "2026-04-08T10:00:00.000Z",
+      "updatedAt": "2026-06-05T10:00:00.000Z"
+    },
+    {
+      "id": "lst-seed-005",
+      "ownerId": "vo-seed-002",
+      "name": "New Cairo Business Lounge",
+      "description": "Modern co-working and event space in Fifth Settlement. Ideal for corporate seminars and product demos.",
+      "location": "Fifth Settlement, New Cairo",
+      "capacity": 60,
+      "dimensionsSqm": 180,
+      "amenities": ["WiFi", "Projector", "Whiteboard", "Video conferencing", "Coffee station"],
+      "pricing": { "amount": 5000, "currency": "EGP", "unit": "per_day" },
+      "photos": [],
+      "floorPlans": [],
+      "availability": [
+        { "date": "2026-06-25", "status": "available" },
+        { "date": "2026-07-02", "status": "available" },
+        { "date": "2026-07-09", "status": "booked" }
+      ],
+      "status": "active",
+      "createdAt": "2026-04-10T08:00:00.000Z",
+      "updatedAt": "2026-06-01T08:00:00.000Z"
+    },
+    {
+      "id": "lst-seed-006",
+      "ownerId": "vo-seed-002",
+      "name": "Giza Pyramids View Hall",
+      "description": "Draft listing — pending photography and floor plan uploads before going live.",
+      "location": "Giza, Cairo",
+      "capacity": 300,
+      "dimensionsSqm": 600,
+      "amenities": ["Pyramid view", "Parking", "Catering"],
+      "pricing": { "amount": 20000, "currency": "EGP", "unit": "per_day" },
+      "photos": [],
+      "floorPlans": [],
+      "availability": [],
+      "status": "draft",
+      "createdAt": "2026-06-15T08:00:00.000Z",
+      "updatedAt": "2026-06-15T08:00:00.000Z"
+    }
+  ],
+  "bookingRequests": [
+    {
+      "id": "br-seed-001",
+      "listingId": "lst-seed-001",
+      "organizerName": "Layla Hassan",
+      "organizerContact": "layla.hassan@popeyez-organizers.com",
+      "eventType": "Pop-up Café Launch",
+      "eventDate": "2026-07-05",
+      "expectedAttendees": 60,
+      "specialRequirements": "Need power outlets near seating area.",
+      "status": "Pending",
+      "ownerMessage": null,
+      "counterProposal": null,
+      "messages": [],
+      "createdAt": "2026-06-10T08:15:00.000Z"
+    },
+    {
+      "id": "br-seed-002",
+      "listingId": "lst-seed-002",
+      "organizerName": "Karim Aboulnaga",
+      "organizerContact": "karim.a@popeyez-organizers.com",
+      "eventType": "Streetwear Brand Activation",
+      "eventDate": "2026-06-28",
+      "expectedAttendees": 180,
+      "specialRequirements": "Requires loading dock access the night before.",
+      "status": "Approved",
+      "ownerMessage": "Approved! Looking forward to hosting you.",
+      "counterProposal": null,
+      "messages": [],
+      "createdAt": "2026-06-05T14:00:00.000Z",
+      "respondedAt": "2026-06-06T09:00:00.000Z"
+    },
+    {
+      "id": "br-seed-003",
+      "listingId": "lst-seed-004",
+      "organizerName": "Sara El-Masri",
+      "organizerContact": "sara.elmasri@events.com",
+      "eventType": "Sunset Cocktail Party",
+      "eventDate": "2026-07-04",
+      "expectedAttendees": 90,
+      "specialRequirements": "Need bar setup by 5 PM.",
+      "status": "Counter-Proposed",
+      "ownerMessage": "I can accommodate but need EGP 10,000 instead due to high-season pricing.",
+      "counterProposal": { "amount": 10000, "currency": "EGP" },
+      "messages": [],
+      "createdAt": "2026-06-12T10:00:00.000Z",
+      "respondedAt": "2026-06-13T09:00:00.000Z"
+    },
+    {
+      "id": "br-seed-004",
+      "listingId": "lst-seed-005",
+      "organizerName": "Ahmed Samy",
+      "organizerContact": "ahmed.samy@techco.eg",
+      "eventType": "Product Demo Day",
+      "eventDate": "2026-07-09",
+      "expectedAttendees": 55,
+      "specialRequirements": "Video conferencing required for remote participants.",
+      "status": "Approved",
+      "ownerMessage": "Confirmed. Video conferencing system will be ready.",
+      "counterProposal": null,
+      "messages": [],
+      "createdAt": "2026-06-08T09:00:00.000Z",
+      "respondedAt": "2026-06-09T11:00:00.000Z"
+    },
+    {
+      "id": "br-seed-005",
+      "listingId": "lst-seed-001",
+      "organizerName": "Dina Ramzy",
+      "organizerContact": "dina.ramzy@fashion.eg",
+      "eventType": "Fashion Pop-up Show",
+      "eventDate": "2026-07-19",
+      "expectedAttendees": 70,
+      "specialRequirements": "Need runway setup space.",
+      "status": "Rejected",
+      "ownerMessage": "Venue is not configured for runway setups. Unable to accommodate.",
+      "counterProposal": null,
+      "messages": [],
+      "createdAt": "2026-06-14T14:00:00.000Z",
+      "respondedAt": "2026-06-15T10:00:00.000Z"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "bk-seed-001",
+      "requestId": "br-seed-002",
+      "listingId": "lst-seed-002",
+      "organizerName": "Karim Aboulnaga",
+      "organizerContact": "karim.a@popeyez-organizers.com",
+      "eventType": "Streetwear Brand Activation",
+      "eventDate": "2026-06-28",
+      "expectedAttendees": 180,
+      "specialRequirements": "Requires loading dock access the night before.",
+      "status": "Confirmed",
+      "createdAt": "2026-06-06T09:00:00.000Z"
+    },
+    {
+      "id": "bk-seed-002",
+      "requestId": "br-seed-004",
+      "listingId": "lst-seed-005",
+      "organizerName": "Ahmed Samy",
+      "organizerContact": "ahmed.samy@techco.eg",
+      "eventType": "Product Demo Day",
+      "eventDate": "2026-07-09",
+      "expectedAttendees": 55,
+      "specialRequirements": "Video conferencing required.",
+      "status": "Confirmed",
+      "createdAt": "2026-06-09T11:00:00.000Z"
+    },
+    {
+      "id": "bk-seed-003",
+      "requestId": null,
+      "listingId": "lst-seed-004",
+      "organizerName": "Mona Sherif",
+      "organizerContact": "mona.sherif@corporate.eg",
+      "eventType": "Corporate Anniversary Dinner",
+      "eventDate": "2026-05-15",
+      "expectedAttendees": 100,
+      "specialRequirements": "",
+      "status": "Completed",
+      "createdAt": "2026-04-20T00:00:00.000Z"
+    },
+    {
+      "id": "bk-seed-004",
+      "requestId": null,
+      "listingId": "lst-seed-001",
+      "organizerName": "Yusuf Mansour",
+      "organizerContact": "yusuf@startup.eg",
+      "eventType": "Startup Demo Night",
+      "eventDate": "2026-05-01",
+      "expectedAttendees": 50,
+      "specialRequirements": "",
+      "status": "Cancelled",
+      "createdAt": "2026-04-10T00:00:00.000Z"
+    }
+  ]
 }

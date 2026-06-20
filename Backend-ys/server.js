@@ -567,6 +567,71 @@ app.delete('/api/events/:eventId/guests/:id', auth, (req, res) => {
   res.json({ message: 'Deleted' });
 });
 
+// ── Guest Journey (Public — no auth required) ─────────────────────────────────
+
+app.get('/api/invitation', (req, res) => {
+  const db = readDb();
+  res.json(db.invitation || {});
+});
+
+app.get('/api/messages', (req, res) => {
+  const db = readDb();
+  res.json(db.guestMessages || []);
+});
+
+app.post('/api/rsvp', (req, res) => {
+  const { attendance, dietaryPreference, specialRequirements } = req.body;
+  if (!attendance) return res.status(400).json({ message: 'Attendance status is required' });
+  const db = readDb();
+  const rsvp = {
+    id: Date.now(),
+    attendance,
+    dietaryPreference: dietaryPreference || '',
+    specialRequirements: specialRequirements || '',
+    submittedAt: new Date().toISOString(),
+  };
+  if (!db.guestRsvps) db.guestRsvps = [];
+  db.guestRsvps.push(rsvp);
+  writeDb(db);
+  res.json({ message: 'RSVP submitted successfully', rsvp });
+});
+
+app.post('/api/check-in', (req, res) => {
+  const { guestName, qrCode } = req.body;
+  if (!guestName || !qrCode) return res.status(400).json({ message: 'Guest name and QR code are required' });
+  const db = readDb();
+  const checkIn = {
+    id: Date.now(),
+    guestName,
+    qrCode,
+    checkedInAt: new Date().toISOString(),
+  };
+  if (!db.checkIns) db.checkIns = [];
+  db.checkIns.push(checkIn);
+  writeDb(db);
+  res.json({ message: 'Check-in confirmed. Welcome to the event!', checkIn });
+});
+
+app.post('/api/feedback', (req, res) => {
+  const { overallExperience, foodRating, venueRating, organizationRating, comments } = req.body;
+  if (!overallExperience || !foodRating || !venueRating || !organizationRating)
+    return res.status(400).json({ message: 'All rating fields are required' });
+  const db = readDb();
+  const fb = {
+    id: Date.now(),
+    overallExperience,
+    foodRating,
+    venueRating,
+    organizationRating,
+    comments: comments || '',
+    submittedAt: new Date().toISOString(),
+  };
+  if (!db.publicFeedback) db.publicFeedback = [];
+  db.publicFeedback.push(fb);
+  writeDb(db);
+  res.json({ message: 'Thank you for submitting your feedback!', feedback: fb });
+});
+
 // ── Start ─────────────────────────────────────────────────────────────────────
 
 app.listen(PORT, () => {

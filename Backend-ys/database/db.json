@@ -5,8 +5,8 @@
       "email": "organizer@events.com",
       "firstName": "Event",
       "lastName": "Organizer",
-      "phone": null,
-      "companyName": "Events Co.",
+      "phone": "+20 100 111 2222",
+      "companyName": "PopEyez Events Co.",
       "passwordHash": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
       "role": "EVENT_ORGANIZER",
       "isActive": true,
@@ -23,9 +23,153 @@
       "role": "ADMIN",
       "isActive": true,
       "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "staff-1",
+      "email": "hassan.team@events.com",
+      "firstName": "Hassan",
+      "lastName": "Ali",
+      "phone": "+20 101 222 3333",
+      "companyName": null,
+      "passwordHash": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+      "role": "TEAM_MEMBER",
+      "isActive": true,
+      "createdById": "seed-organizer-1",
+      "createdAt": "2026-02-01T00:00:00.000Z"
+    },
+    {
+      "id": "staff-2",
+      "email": "mariam.team@events.com",
+      "firstName": "Mariam",
+      "lastName": "Khalid",
+      "phone": "+20 102 333 4444",
+      "companyName": null,
+      "passwordHash": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+      "role": "TEAM_MEMBER",
+      "isActive": true,
+      "createdById": "seed-organizer-1",
+      "createdAt": "2026-02-01T00:00:00.000Z"
     }
   ],
-  "events": [],
+  "guestUsers": [
+    {
+      "id": "guest-user-1",
+      "email": "sara.hassan@guest.com",
+      "name": "Sara Hassan",
+      "passwordHash": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+      "role": "GUEST",
+      "createdAt": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "guest-user-2",
+      "email": "karim.ali@guest.com",
+      "name": "Karim Ali",
+      "passwordHash": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+      "role": "GUEST",
+      "createdAt": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "guest-user-3",
+      "email": "layla.noor@guest.com",
+      "name": "Layla Noor",
+      "passwordHash": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+      "role": "GUEST",
+      "createdAt": "2026-05-05T00:00:00.000Z"
+    }
+  ],
+  "events": [
+    {
+      "id": "event-1",
+      "organizerId": "seed-organizer-1",
+      "title": "Cairo Tech Summit 2026",
+      "description": "Annual technology conference bringing together innovators and industry leaders.",
+      "eventType": "CONFERENCE",
+      "status": "CONFIRMED",
+      "startDate": "2026-08-15T09:00:00.000Z",
+      "endDate": "2026-08-17T18:00:00.000Z",
+      "expectedAttendees": 350,
+      "venueId": "venue-1",
+      "createdAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "id": "event-2",
+      "organizerId": "seed-organizer-1",
+      "title": "Nile Gala Dinner 2026",
+      "description": "Exclusive black-tie charity gala on the banks of the Nile.",
+      "eventType": "GALA",
+      "status": "COMPLETED",
+      "startDate": "2026-04-20T19:00:00.000Z",
+      "endDate": "2026-04-20T23:59:00.000Z",
+      "expectedAttendees": 200,
+      "venueId": "venue-2",
+      "createdAt": "2026-01-10T00:00:00.000Z"
+    },
+    {
+      "id": "event-3",
+      "organizerId": "seed-organizer-1",
+      "title": "PopEyez Brand Activation",
+      "description": "Street-style product launch with interactive installations and live DJ.",
+      "eventType": "PRODUCT_LAUNCH",
+      "status": "IN_PROGRESS",
+      "startDate": "2026-06-21T10:00:00.000Z",
+      "endDate": "2026-06-21T22:00:00.000Z",
+      "expectedAttendees": 500,
+      "venueId": "venue-3",
+      "createdAt": "2026-04-01T00:00:00.000Z"
+    },
+    {
+      "id": "event-4",
+      "organizerId": "seed-organizer-1",
+      "title": "UX Design Masterclass",
+      "description": "Full-day hands-on workshop for designers and product managers.",
+      "eventType": "WORKSHOP",
+      "status": "DRAFT",
+      "startDate": "2026-09-05T09:00:00.000Z",
+      "endDate": "2026-09-05T17:00:00.000Z",
+      "expectedAttendees": 60,
+      "venueId": null,
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "event-5",
+      "organizerId": "seed-organizer-1",
+      "title": "Al-Nour Wedding Celebration",
+      "description": "Elegant wedding reception with full catering and floral arrangements.",
+      "eventType": "WEDDING",
+      "status": "PLANNING",
+      "startDate": "2026-10-10T17:00:00.000Z",
+      "endDate": "2026-10-11T01:00:00.000Z",
+      "expectedAttendees": 280,
+      "venueId": "venue-4",
+      "createdAt": "2026-05-15T00:00:00.000Z"
+    },
+    {
+      "id": "event-6",
+      "organizerId": "seed-organizer-1",
+      "title": "Startup Pitch Night",
+      "description": "Cancelled due to venue conflict — rescheduling in progress.",
+      "eventType": "CONFERENCE",
+      "status": "CANCELLED",
+      "startDate": "2026-07-01T18:00:00.000Z",
+      "endDate": "2026-07-01T21:00:00.000Z",
+      "expectedAttendees": 120,
+      "venueId": "venue-1",
+      "createdAt": "2026-05-20T00:00:00.000Z"
+    },
+    {
+      "id": "mqmwm7y8z87me89a10r",
+      "organizerId": "seed-organizer-1",
+      "status": "DRAFT",
+      "title": "minecraft",
+      "description": "server run",
+      "eventType": "CONFERENCE",
+      "startDate": "2026-06-17T01:02",
+      "endDate": "2026-06-21T01:03",
+      "expectedAttendees": 67,
+      "venueId": "venue-3",
+      "createdAt": "2026-06-20T22:03:11.168Z"
+    }
+  ],
   "venues": [
     {
       "id": "venue-1",
@@ -88,13 +232,496 @@
       "createdAt": "2026-01-01T00:00:00.000Z"
     }
   ],
-  "bookings": [],
-  "stakeholders": [],
-  "tasks": [],
-  "budgetCategories": [],
-  "expenses": [],
-  "floorPlans": [],
-  "staff": [],
+  "bookings": [
+    {
+      "id": "booking-1",
+      "organizerId": "seed-organizer-1",
+      "venueId": "venue-1",
+      "eventId": "event-1",
+      "startDate": "2026-08-15T00:00:00.000Z",
+      "endDate": "2026-08-17T00:00:00.000Z",
+      "status": "APPROVED",
+      "message": "Confirmed by venue manager.",
+      "createdAt": "2026-03-05T00:00:00.000Z"
+    },
+    {
+      "id": "booking-2",
+      "organizerId": "seed-organizer-1",
+      "venueId": "venue-2",
+      "eventId": "event-2",
+      "startDate": "2026-04-20T00:00:00.000Z",
+      "endDate": "2026-04-20T00:00:00.000Z",
+      "status": "APPROVED",
+      "message": "Venue confirmed.",
+      "createdAt": "2026-01-15T00:00:00.000Z"
+    },
+    {
+      "id": "booking-3",
+      "organizerId": "seed-organizer-1",
+      "venueId": "venue-4",
+      "eventId": "event-5",
+      "startDate": "2026-10-10T00:00:00.000Z",
+      "endDate": "2026-10-11T00:00:00.000Z",
+      "status": "PENDING",
+      "message": "",
+      "createdAt": "2026-05-20T00:00:00.000Z"
+    },
+    {
+      "id": "booking-4",
+      "organizerId": "seed-organizer-1",
+      "venueId": "venue-3",
+      "eventId": "event-4",
+      "startDate": "2026-09-05T00:00:00.000Z",
+      "endDate": "2026-09-05T00:00:00.000Z",
+      "status": "REJECTED",
+      "message": "Venue unavailable on requested date.",
+      "createdAt": "2026-06-02T00:00:00.000Z"
+    },
+    {
+      "id": "booking-5",
+      "organizerId": "seed-organizer-1",
+      "venueId": "venue-2",
+      "eventId": "event-4",
+      "startDate": "2026-09-05T00:00:00.000Z",
+      "endDate": "2026-09-05T00:00:00.000Z",
+      "status": "CANCELLED",
+      "message": "Cancelled by organizer.",
+      "createdAt": "2026-06-10T00:00:00.000Z"
+    }
+  ],
+  "stakeholders": [
+    {
+      "id": "sh-1",
+      "eventId": "event-1",
+      "name": "TechEgypt Foundation",
+      "role": "SPONSOR",
+      "email": "info@techegypt.com",
+      "phone": "+20 100 500 1111",
+      "notes": "Platinum sponsor — logo on all materials",
+      "createdAt": "2026-03-10T00:00:00.000Z"
+    },
+    {
+      "id": "sh-2",
+      "eventId": "event-1",
+      "name": "Dr. Mona Ramzy",
+      "role": "SPEAKER",
+      "email": "m.ramzy@cairo-uni.edu",
+      "phone": "+20 101 500 2222",
+      "notes": "Keynote: AI in Healthcare",
+      "createdAt": "2026-03-12T00:00:00.000Z"
+    },
+    {
+      "id": "sh-3",
+      "eventId": "event-1",
+      "name": "Nile Logistics Co.",
+      "role": "PARTNER",
+      "email": "ops@nilelogistics.com",
+      "phone": null,
+      "notes": "Transport partner for attendees",
+      "createdAt": "2026-03-14T00:00:00.000Z"
+    },
+    {
+      "id": "sh-4",
+      "eventId": "event-1",
+      "name": "Tarek Ismail",
+      "role": "VOLUNTEER",
+      "email": "tarek.v@gmail.com",
+      "phone": "+20 112 500 3333",
+      "notes": "Registration desk volunteer",
+      "createdAt": "2026-04-01T00:00:00.000Z"
+    },
+    {
+      "id": "sh-5",
+      "eventId": "event-1",
+      "name": "Sama Media Group",
+      "role": "CO_ORGANIZER",
+      "email": "events@samamedia.com",
+      "phone": "+20 100 600 4444",
+      "notes": "Co-managing media relations",
+      "createdAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "id": "sh-6",
+      "eventId": "event-1",
+      "name": "Amira Consulting",
+      "role": "OTHER",
+      "email": "amira@amira.co",
+      "phone": null,
+      "notes": "Event strategy consultant",
+      "createdAt": "2026-03-15T00:00:00.000Z"
+    },
+    {
+      "id": "sh-7",
+      "eventId": "event-2",
+      "name": "Cairo Charity Network",
+      "role": "SPONSOR",
+      "email": "support@cairocharities.org",
+      "phone": "+20 100 700 5555",
+      "notes": "Main charity beneficiary",
+      "createdAt": "2026-01-20T00:00:00.000Z"
+    },
+    {
+      "id": "sh-8",
+      "eventId": "event-5",
+      "name": "Floral Dreams Studio",
+      "role": "PARTNER",
+      "email": "info@floraldreams.eg",
+      "phone": "+20 101 800 6666",
+      "notes": "Floral and decoration partner",
+      "createdAt": "2026-05-20T00:00:00.000Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-1",
+      "eventId": "event-1",
+      "organizerId": "seed-organizer-1",
+      "title": "Book keynote speaker flights",
+      "status": "COMPLETED",
+      "priority": "HIGH",
+      "dueDate": "2026-07-15T00:00:00.000Z",
+      "description": "Book business class flights for Dr. Ramzy.",
+      "createdAt": "2026-03-15T00:00:00.000Z"
+    },
+    {
+      "id": "task-2",
+      "eventId": "event-1",
+      "organizerId": "seed-organizer-1",
+      "title": "Finalize conference agenda",
+      "status": "IN_PROGRESS",
+      "priority": "URGENT",
+      "dueDate": "2026-07-20T00:00:00.000Z",
+      "description": "Confirm all session slots and speakers.",
+      "createdAt": "2026-04-01T00:00:00.000Z"
+    },
+    {
+      "id": "task-3",
+      "eventId": "event-1",
+      "organizerId": "seed-organizer-1",
+      "title": "Print name badges",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "dueDate": "2026-08-10T00:00:00.000Z",
+      "description": "350 badges with lanyards.",
+      "createdAt": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "task-4",
+      "eventId": "event-1",
+      "organizerId": "seed-organizer-1",
+      "title": "Set up registration desk software",
+      "status": "TODO",
+      "priority": "HIGH",
+      "dueDate": "2026-08-14T00:00:00.000Z",
+      "description": "Configure QR check-in app.",
+      "createdAt": "2026-05-10T00:00:00.000Z"
+    },
+    {
+      "id": "task-5",
+      "eventId": "event-1",
+      "organizerId": "seed-organizer-1",
+      "title": "Send sponsor invoice",
+      "status": "BLOCKED",
+      "priority": "URGENT",
+      "dueDate": "2026-06-30T00:00:00.000Z",
+      "description": "Waiting on legal review of contract.",
+      "createdAt": "2026-05-20T00:00:00.000Z"
+    },
+    {
+      "id": "task-6",
+      "eventId": "event-2",
+      "organizerId": "seed-organizer-1",
+      "title": "Settle catering invoice",
+      "status": "COMPLETED",
+      "priority": "HIGH",
+      "dueDate": "2026-04-25T00:00:00.000Z",
+      "description": "Final payment to Elite Catering.",
+      "createdAt": "2026-04-21T00:00:00.000Z"
+    },
+    {
+      "id": "task-7",
+      "eventId": "event-3",
+      "organizerId": "seed-organizer-1",
+      "title": "Set up DJ equipment",
+      "status": "COMPLETED",
+      "priority": "HIGH",
+      "dueDate": "2026-06-21T08:00:00.000Z",
+      "description": "Sound & Light Pro confirmed.",
+      "createdAt": "2026-06-10T00:00:00.000Z"
+    },
+    {
+      "id": "task-8",
+      "eventId": "event-3",
+      "organizerId": "seed-organizer-1",
+      "title": "Manage social media live coverage",
+      "status": "IN_PROGRESS",
+      "priority": "MEDIUM",
+      "dueDate": "2026-06-21T22:00:00.000Z",
+      "description": "Post updates every hour.",
+      "createdAt": "2026-06-15T00:00:00.000Z"
+    },
+    {
+      "id": "task-9",
+      "eventId": "event-5",
+      "organizerId": "seed-organizer-1",
+      "title": "Confirm floral arrangements",
+      "status": "TODO",
+      "priority": "MEDIUM",
+      "dueDate": "2026-09-01T00:00:00.000Z",
+      "description": "Check colour palette with bride.",
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "task-10",
+      "eventId": "event-5",
+      "organizerId": "seed-organizer-1",
+      "title": "Coordinate seating plan",
+      "status": "TODO",
+      "priority": "LOW",
+      "dueDate": "2026-09-20T00:00:00.000Z",
+      "description": "280 guests across 28 tables.",
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    }
+  ],
+  "budgetCategories": [
+    {
+      "id": "bc-1",
+      "eventId": "event-1",
+      "name": "Venue",
+      "allocatedBudget": 50000,
+      "createdAt": "2026-03-05T00:00:00.000Z"
+    },
+    {
+      "id": "bc-2",
+      "eventId": "event-1",
+      "name": "Catering",
+      "allocatedBudget": 35000,
+      "createdAt": "2026-03-05T00:00:00.000Z"
+    },
+    {
+      "id": "bc-3",
+      "eventId": "event-1",
+      "name": "Marketing",
+      "allocatedBudget": 20000,
+      "createdAt": "2026-03-05T00:00:00.000Z"
+    },
+    {
+      "id": "bc-4",
+      "eventId": "event-1",
+      "name": "AV & Tech",
+      "allocatedBudget": 15000,
+      "createdAt": "2026-03-05T00:00:00.000Z"
+    },
+    {
+      "id": "bc-5",
+      "eventId": "event-2",
+      "name": "Catering",
+      "allocatedBudget": 80000,
+      "createdAt": "2026-01-15T00:00:00.000Z"
+    },
+    {
+      "id": "bc-6",
+      "eventId": "event-2",
+      "name": "Decoration",
+      "allocatedBudget": 30000,
+      "createdAt": "2026-01-15T00:00:00.000Z"
+    },
+    {
+      "id": "bc-7",
+      "eventId": "event-5",
+      "name": "Flowers",
+      "allocatedBudget": 25000,
+      "createdAt": "2026-05-20T00:00:00.000Z"
+    },
+    {
+      "id": "bc-8",
+      "eventId": "event-5",
+      "name": "Photography",
+      "allocatedBudget": 18000,
+      "createdAt": "2026-05-20T00:00:00.000Z"
+    },
+    {
+      "id": "bc-9",
+      "eventId": "event-5",
+      "name": "Music & Entertainment",
+      "allocatedBudget": 12000,
+      "createdAt": "2026-05-20T00:00:00.000Z"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "exp-1",
+      "categoryId": "bc-1",
+      "eventId": "event-1",
+      "description": "Venue deposit (50%)",
+      "amount": 25000,
+      "date": "2026-03-10",
+      "createdAt": "2026-03-10T00:00:00.000Z"
+    },
+    {
+      "id": "exp-2",
+      "categoryId": "bc-2",
+      "eventId": "event-1",
+      "description": "Catering deposit",
+      "amount": 17500,
+      "date": "2026-04-01",
+      "createdAt": "2026-04-01T00:00:00.000Z"
+    },
+    {
+      "id": "exp-3",
+      "categoryId": "bc-3",
+      "eventId": "event-1",
+      "description": "Social media ads",
+      "amount": 8000,
+      "date": "2026-05-01",
+      "createdAt": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "exp-4",
+      "categoryId": "bc-3",
+      "eventId": "event-1",
+      "description": "Print flyers & banners",
+      "amount": 4500,
+      "date": "2026-05-15",
+      "createdAt": "2026-05-15T00:00:00.000Z"
+    },
+    {
+      "id": "exp-5",
+      "categoryId": "bc-4",
+      "eventId": "event-1",
+      "description": "Projector rental",
+      "amount": 6000,
+      "date": "2026-06-01",
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "exp-6",
+      "categoryId": "bc-5",
+      "eventId": "event-2",
+      "description": "Elite Catering final payment",
+      "amount": 75000,
+      "date": "2026-04-25",
+      "createdAt": "2026-04-25T00:00:00.000Z"
+    },
+    {
+      "id": "exp-7",
+      "categoryId": "bc-6",
+      "eventId": "event-2",
+      "description": "Bloom Floral — full service",
+      "amount": 28000,
+      "date": "2026-04-25",
+      "createdAt": "2026-04-25T00:00:00.000Z"
+    },
+    {
+      "id": "exp-8",
+      "categoryId": "bc-7",
+      "eventId": "event-5",
+      "description": "Floral Dreams deposit",
+      "amount": 10000,
+      "date": "2026-06-01",
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "exp-9",
+      "categoryId": "bc-8",
+      "eventId": "event-5",
+      "description": "Capture Moments booking fee",
+      "amount": 5000,
+      "date": "2026-06-05",
+      "createdAt": "2026-06-05T00:00:00.000Z"
+    }
+  ],
+  "floorPlans": [
+    {
+      "id": "fp-1",
+      "eventId": "event-1",
+      "name": "Cairo Tech Summit — Main Hall",
+      "canvasData": "{\"elements\":[{\"id\":\"e1\",\"type\":\"rect\",\"x\":50,\"y\":50,\"w\":200,\"h\":80,\"label\":\"Registration Desk\"},{\"id\":\"e2\",\"type\":\"rect\",\"x\":300,\"y\":50,\"w\":400,\"h\":300,\"label\":\"Main Stage\"},{\"id\":\"e3\",\"type\":\"rect\",\"x\":50,\"y\":200,\"w\":200,\"h\":200,\"label\":\"Sponsor Booths\"}]}",
+      "createdAt": "2026-04-01T00:00:00.000Z"
+    },
+    {
+      "id": "fp-2",
+      "eventId": "event-1",
+      "name": "Cairo Tech Summit — Breakout Rooms",
+      "canvasData": "{\"elements\":[{\"id\":\"e4\",\"type\":\"rect\",\"x\":50,\"y\":50,\"w\":180,\"h\":120,\"label\":\"Room A\"},{\"id\":\"e5\",\"type\":\"rect\",\"x\":280,\"y\":50,\"w\":180,\"h\":120,\"label\":\"Room B\"},{\"id\":\"e6\",\"type\":\"rect\",\"x\":510,\"y\":50,\"w\":180,\"h\":120,\"label\":\"Room C\"}]}",
+      "createdAt": "2026-04-15T00:00:00.000Z"
+    },
+    {
+      "id": "fp-3",
+      "eventId": "event-2",
+      "name": "Nile Gala — Dining Layout",
+      "canvasData": "{\"elements\":[{\"id\":\"e7\",\"type\":\"rect\",\"x\":400,\"y\":50,\"w\":200,\"h\":80,\"label\":\"Head Table\"},{\"id\":\"e8\",\"type\":\"circle\",\"x\":100,\"y\":200,\"r\":60,\"label\":\"Table 1\"},{\"id\":\"e9\",\"type\":\"circle\",\"x\":280,\"y\":200,\"r\":60,\"label\":\"Table 2\"}]}",
+      "createdAt": "2026-02-01T00:00:00.000Z"
+    }
+  ],
+  "staff": [
+    {
+      "id": "stf-1",
+      "eventId": "event-1",
+      "name": "Hassan Ali",
+      "role": "REGISTRATION",
+      "email": "hassan.team@events.com",
+      "phone": "+20 101 222 3333",
+      "shiftStart": "08:00",
+      "shiftEnd": "14:00",
+      "createdAt": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "stf-2",
+      "eventId": "event-1",
+      "name": "Mariam Khalid",
+      "role": "LOGISTICS",
+      "email": "mariam.team@events.com",
+      "phone": "+20 102 333 4444",
+      "shiftStart": "14:00",
+      "shiftEnd": "20:00",
+      "createdAt": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "stf-3",
+      "eventId": "event-1",
+      "name": "Yusuf Bakr",
+      "role": "SECURITY",
+      "email": "yusuf.b@staff.com",
+      "phone": "+20 103 444 5555",
+      "shiftStart": "08:00",
+      "shiftEnd": "20:00",
+      "createdAt": "2026-05-10T00:00:00.000Z"
+    },
+    {
+      "id": "stf-4",
+      "eventId": "event-2",
+      "name": "Nadia El-Sayed",
+      "role": "HOSPITALITY",
+      "email": "nadia@events.com",
+      "phone": "+20 104 555 6666",
+      "shiftStart": "17:00",
+      "shiftEnd": "24:00",
+      "createdAt": "2026-02-01T00:00:00.000Z"
+    },
+    {
+      "id": "stf-5",
+      "eventId": "event-3",
+      "name": "Karim Farouk",
+      "role": "SOCIAL_MEDIA",
+      "email": "karim.f@events.com",
+      "phone": "+20 105 666 7777",
+      "shiftStart": "09:00",
+      "shiftEnd": "22:00",
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "stf-6",
+      "eventId": "event-5",
+      "name": "Heba Mansour",
+      "role": "COORDINATOR",
+      "email": "heba@events.com",
+      "phone": "+20 106 777 8888",
+      "shiftStart": "15:00",
+      "shiftEnd": "02:00",
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    }
+  ],
   "vendors": [
     {
       "id": "vendor-1",
@@ -150,12 +777,473 @@
       "rating": 4.4,
       "isActive": true,
       "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "vendor-6",
+      "name": "DigitalPrint Studio",
+      "category": "PRINTING",
+      "email": "print@digitalstudio.eg",
+      "phone": "+20-111-222-3333",
+      "description": "Banners, signage, brochures and branded materials",
+      "rating": 4.3,
+      "isActive": true,
+      "createdAt": "2026-02-01T00:00:00.000Z"
     }
   ],
-  "eventVendors": [],
-  "sourcingRequests": [],
-  "deliveries": [],
-  "invoices": [],
-  "guests": [],
-  "feedback": []
+  "eventVendors": [
+    {
+      "id": "ev-1",
+      "eventId": "event-1",
+      "vendorId": "vendor-1",
+      "status": "CONFIRMED",
+      "notes": "3-course buffet for 350",
+      "createdAt": "2026-04-01T00:00:00.000Z"
+    },
+    {
+      "id": "ev-2",
+      "eventId": "event-1",
+      "vendorId": "vendor-2",
+      "status": "CONFIRMED",
+      "notes": "Full AV rig + live stream",
+      "createdAt": "2026-04-01T00:00:00.000Z"
+    },
+    {
+      "id": "ev-3",
+      "eventId": "event-1",
+      "vendorId": "vendor-5",
+      "status": "PENDING",
+      "notes": "Shuttle service from Tahrir",
+      "createdAt": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "ev-4",
+      "eventId": "event-2",
+      "vendorId": "vendor-1",
+      "status": "COMPLETED",
+      "notes": "5-star gala dinner service",
+      "createdAt": "2026-02-01T00:00:00.000Z"
+    },
+    {
+      "id": "ev-5",
+      "eventId": "event-2",
+      "vendorId": "vendor-3",
+      "status": "COMPLETED",
+      "notes": "Floral centrepieces for 20 tables",
+      "createdAt": "2026-02-01T00:00:00.000Z"
+    },
+    {
+      "id": "ev-6",
+      "eventId": "event-2",
+      "vendorId": "vendor-4",
+      "status": "COMPLETED",
+      "notes": "Full-evening photo & video",
+      "createdAt": "2026-02-01T00:00:00.000Z"
+    },
+    {
+      "id": "ev-7",
+      "eventId": "event-3",
+      "vendorId": "vendor-2",
+      "status": "CONFIRMED",
+      "notes": "DJ setup + lighting rigs",
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "ev-8",
+      "eventId": "event-5",
+      "vendorId": "vendor-3",
+      "status": "CONFIRMED",
+      "notes": "Arch + table arrangements",
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "ev-9",
+      "eventId": "event-5",
+      "vendorId": "vendor-4",
+      "status": "CONFIRMED",
+      "notes": "12-hour wedding coverage",
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    }
+  ],
+  "sourcingRequests": [
+    {
+      "id": "sr-1",
+      "eventId": "event-1",
+      "vendorId": "vendor-6",
+      "status": "APPROVED",
+      "details": "500 branded lanyards + name card holders",
+      "requestedAt": "2026-04-10T00:00:00.000Z"
+    },
+    {
+      "id": "sr-2",
+      "eventId": "event-1",
+      "vendorId": "vendor-3",
+      "status": "DRAFT",
+      "details": "Stage backdrop with sponsor logos",
+      "requestedAt": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "sr-3",
+      "eventId": "event-3",
+      "vendorId": "vendor-6",
+      "status": "PENDING",
+      "details": "Branded tote bags x300",
+      "requestedAt": "2026-06-05T00:00:00.000Z"
+    }
+  ],
+  "deliveries": [
+    {
+      "id": "del-1",
+      "eventId": "event-1",
+      "vendorId": "vendor-6",
+      "status": "DELIVERED",
+      "scheduledDate": "2026-08-14T00:00:00.000Z",
+      "notes": "Delivered to registration desk",
+      "createdAt": "2026-06-20T00:00:00.000Z"
+    },
+    {
+      "id": "del-2",
+      "eventId": "event-1",
+      "vendorId": "vendor-2",
+      "status": "SCHEDULED",
+      "scheduledDate": "2026-08-14T00:00:00.000Z",
+      "notes": "Setup day before event",
+      "createdAt": "2026-06-20T00:00:00.000Z"
+    },
+    {
+      "id": "del-3",
+      "eventId": "event-3",
+      "vendorId": "vendor-2",
+      "status": "IN_TRANSIT",
+      "scheduledDate": "2026-06-21T00:00:00.000Z",
+      "notes": "DJ truck en route",
+      "createdAt": "2026-06-18T00:00:00.000Z"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "inv-1",
+      "eventId": "event-1",
+      "vendorId": "vendor-1",
+      "status": "PAID",
+      "amount": 52500,
+      "issuedDate": "2026-04-01",
+      "dueDate": "2026-04-30",
+      "paidDate": "2026-04-28",
+      "createdAt": "2026-04-01T00:00:00.000Z"
+    },
+    {
+      "id": "inv-2",
+      "eventId": "event-1",
+      "vendorId": "vendor-2",
+      "status": "OUTSTANDING",
+      "amount": 24000,
+      "issuedDate": "2026-06-01",
+      "dueDate": "2026-07-15",
+      "paidDate": null,
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "inv-3",
+      "eventId": "event-2",
+      "vendorId": "vendor-1",
+      "status": "PAID",
+      "amount": 75000,
+      "issuedDate": "2026-04-20",
+      "dueDate": "2026-04-30",
+      "paidDate": "2026-04-25",
+      "createdAt": "2026-04-20T00:00:00.000Z"
+    },
+    {
+      "id": "inv-4",
+      "eventId": "event-2",
+      "vendorId": "vendor-4",
+      "status": "PAID",
+      "amount": 18000,
+      "issuedDate": "2026-04-20",
+      "dueDate": "2026-04-30",
+      "paidDate": "2026-04-26",
+      "createdAt": "2026-04-20T00:00:00.000Z"
+    },
+    {
+      "id": "inv-5",
+      "eventId": "event-5",
+      "vendorId": "vendor-3",
+      "status": "DRAFT",
+      "amount": 25000,
+      "issuedDate": null,
+      "dueDate": null,
+      "paidDate": null,
+      "createdAt": "2026-06-10T00:00:00.000Z"
+    }
+  ],
+  "guests": [
+    {
+      "id": "g-1",
+      "eventId": "event-1",
+      "name": "Layla Mansour",
+      "email": "layla.m@example.com",
+      "phone": "+20 100 111 001",
+      "rsvpStatus": "CONFIRMED",
+      "dietaryPreference": "Vegetarian",
+      "specialRequirements": "",
+      "invitationSentAt": "2026-06-01T00:00:00.000Z",
+      "createdAt": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "g-2",
+      "eventId": "event-1",
+      "name": "Omar Saber",
+      "email": "omar.s@example.com",
+      "phone": "+20 101 222 002",
+      "rsvpStatus": "CONFIRMED",
+      "dietaryPreference": "None",
+      "specialRequirements": "",
+      "invitationSentAt": "2026-06-01T00:00:00.000Z",
+      "createdAt": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "g-3",
+      "eventId": "event-1",
+      "name": "Dina Wael",
+      "email": "dina.w@example.com",
+      "phone": "+20 102 333 003",
+      "rsvpStatus": "DECLINED",
+      "dietaryPreference": "None",
+      "specialRequirements": "",
+      "invitationSentAt": "2026-06-01T00:00:00.000Z",
+      "createdAt": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "g-4",
+      "eventId": "event-1",
+      "name": "Amir Hassan",
+      "email": "amir.h@example.com",
+      "phone": null,
+      "rsvpStatus": "PENDING",
+      "dietaryPreference": "Halal",
+      "specialRequirements": "Wheelchair access",
+      "invitationSentAt": "2026-06-01T00:00:00.000Z",
+      "createdAt": "2026-05-02T00:00:00.000Z"
+    },
+    {
+      "id": "g-5",
+      "eventId": "event-1",
+      "name": "Rania Taha",
+      "email": "rania.t@example.com",
+      "phone": "+20 103 444 004",
+      "rsvpStatus": "WAITLISTED",
+      "dietaryPreference": "Gluten-free",
+      "specialRequirements": "",
+      "invitationSentAt": "2026-06-05T00:00:00.000Z",
+      "createdAt": "2026-05-05T00:00:00.000Z"
+    },
+    {
+      "id": "g-6",
+      "eventId": "event-2",
+      "name": "Sherif Nabil",
+      "email": "sherif.n@example.com",
+      "phone": "+20 104 555 005",
+      "rsvpStatus": "CONFIRMED",
+      "dietaryPreference": "None",
+      "specialRequirements": "",
+      "invitationSentAt": "2026-02-15T00:00:00.000Z",
+      "createdAt": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "id": "g-7",
+      "eventId": "event-2",
+      "name": "Hana Fouad",
+      "email": "hana.f@example.com",
+      "phone": "+20 105 666 006",
+      "rsvpStatus": "CONFIRMED",
+      "dietaryPreference": "Vegan",
+      "specialRequirements": "",
+      "invitationSentAt": "2026-02-15T00:00:00.000Z",
+      "createdAt": "2026-02-10T00:00:00.000Z"
+    },
+    {
+      "id": "g-8",
+      "eventId": "event-3",
+      "name": "Yousef Bakr",
+      "email": "yousef.b@example.com",
+      "phone": "+20 106 777 007",
+      "rsvpStatus": "CONFIRMED",
+      "dietaryPreference": "None",
+      "specialRequirements": "",
+      "invitationSentAt": null,
+      "createdAt": "2026-06-10T00:00:00.000Z"
+    },
+    {
+      "id": "g-9",
+      "eventId": "event-5",
+      "name": "Mona El-Din",
+      "email": "mona.d@example.com",
+      "phone": "+20 107 888 008",
+      "rsvpStatus": "CONFIRMED",
+      "dietaryPreference": "None",
+      "specialRequirements": "Vegan meal option",
+      "invitationSentAt": "2026-06-15T00:00:00.000Z",
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "g-10",
+      "eventId": "event-5",
+      "name": "Tariq Nour",
+      "email": "tariq.n@example.com",
+      "phone": null,
+      "rsvpStatus": "DECLINED",
+      "dietaryPreference": "None",
+      "specialRequirements": "",
+      "invitationSentAt": "2026-06-15T00:00:00.000Z",
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "fb-1",
+      "eventId": "event-2",
+      "guestId": "g-6",
+      "rating": 5,
+      "comment": "Absolutely stunning evening. Catering was world-class.",
+      "createdAt": "2026-04-21T00:00:00.000Z"
+    },
+    {
+      "id": "fb-2",
+      "eventId": "event-2",
+      "guestId": "g-7",
+      "rating": 4,
+      "comment": "Beautiful venue. Vegan options could be improved.",
+      "createdAt": "2026-04-21T00:00:00.000Z"
+    },
+    {
+      "id": "fb-3",
+      "eventId": "event-2",
+      "guestId": "g-6",
+      "rating": 5,
+      "comment": "Best charity gala I have attended. Will come back.",
+      "createdAt": "2026-04-22T00:00:00.000Z"
+    },
+    {
+      "id": "fb-4",
+      "eventId": "event-1",
+      "guestId": "g-1",
+      "rating": 4,
+      "comment": "Great sessions. Registration queue was a bit long.",
+      "createdAt": "2026-08-17T00:00:00.000Z"
+    },
+    {
+      "id": "fb-5",
+      "eventId": "event-1",
+      "guestId": "g-2",
+      "rating": 5,
+      "comment": "Exceptional keynotes and networking. Top-notch organisation.",
+      "createdAt": "2026-08-17T00:00:00.000Z"
+    }
+  ],
+  "invitation": {
+    "eventName": "Tech Networking Night",
+    "date": "21 June 2026",
+    "time": "6:00 PM",
+    "venue": "Cairo Business Hall, Zamalek",
+    "dressCode": "Smart Casual",
+    "agenda": "6:00 PM Welcome Reception | 7:00 PM Keynote Address | 8:00 PM Networking Dinner | 10:00 PM Closing Remarks"
+  },
+  "guestMessages": [
+    {
+      "id": 1,
+      "title": "Welcome to Tech Networking Night!",
+      "text": "We are thrilled to have you. Please proceed through Gate B and collect your badge at the registration desk.",
+      "status": "Seen"
+    },
+    {
+      "id": 2,
+      "title": "Schedule Update",
+      "text": "Dinner will now begin at 8:30 PM instead of 8:00 PM. Networking in the terrace area in the meantime.",
+      "status": "Received"
+    },
+    {
+      "id": 3,
+      "title": "Parking Notice",
+      "text": "Valet parking is available at the main entrance. Please inform staff of your vehicle plate number.",
+      "status": "Received"
+    },
+    {
+      "id": 4,
+      "title": "Keynote Starting Soon",
+      "text": "The keynote address begins in 15 minutes. Please take your seats in the main hall.",
+      "status": "Follow-up Sent"
+    },
+    {
+      "id": 5,
+      "title": "Thank You!",
+      "text": "Thank you for joining us tonight. Please take a moment to fill in the feedback form before you leave.",
+      "status": "Seen"
+    }
+  ],
+  "guestRsvps": [
+    {
+      "id": 1,
+      "attendance": "Attending",
+      "dietaryPreference": "None",
+      "specialRequirements": "",
+      "submittedAt": "2026-06-10T14:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "attendance": "Not Attending",
+      "dietaryPreference": "",
+      "specialRequirements": "",
+      "submittedAt": "2026-06-11T09:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "attendance": "Maybe",
+      "dietaryPreference": "Vegetarian",
+      "specialRequirements": "Wheelchair access",
+      "submittedAt": "2026-06-12T11:00:00.000Z"
+    }
+  ],
+  "checkIns": [
+    {
+      "id": 1,
+      "guestName": "Sara Hassan",
+      "qrCode": "GUEST-2026-SARA",
+      "checkedInAt": "2026-06-21T17:55:00.000Z"
+    },
+    {
+      "id": 2,
+      "guestName": "Karim Ali",
+      "qrCode": "GUEST-2026-KARIM",
+      "checkedInAt": "2026-06-21T18:10:00.000Z"
+    }
+  ],
+  "publicFeedback": [
+    {
+      "id": 1,
+      "overallExperience": "Excellent",
+      "foodRating": "Excellent",
+      "venueRating": "Good",
+      "organizationRating": "Excellent",
+      "comments": "Fantastic event, very well organised!",
+      "submittedAt": "2026-06-21T22:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "overallExperience": "Good",
+      "foodRating": "Good",
+      "venueRating": "Excellent",
+      "organizationRating": "Good",
+      "comments": "Great venue. Food could have more options.",
+      "submittedAt": "2026-06-21T22:45:00.000Z"
+    },
+    {
+      "id": 3,
+      "overallExperience": "Average",
+      "foodRating": "Poor",
+      "venueRating": "Good",
+      "organizationRating": "Average",
+      "comments": "Long waiting time at registration.",
+      "submittedAt": "2026-06-21T23:00:00.000Z"
+    }
+  ]
 }

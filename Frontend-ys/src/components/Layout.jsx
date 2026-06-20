@@ -7,6 +7,7 @@ const navItems = [
   { to: '/accounts', label: 'Accounts', icon: '👤' },
   { to: '/venues', label: 'Venues', icon: '🏛️' },
   { to: '/bookings', label: 'Bookings', icon: '📋' },
+  { to: '/guest', label: 'Guest Portal', icon: '🎟️' },
 ];
 
 export default function Layout({ children }) {
