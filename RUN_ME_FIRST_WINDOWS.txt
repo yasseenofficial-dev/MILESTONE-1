@@ -1,0 +1,30 @@
+PopEyez Milestone 2 - Windows Run Instructions
+
+1) Extract the ZIP.
+2) Open Command Prompt in the extracted folder.
+
+Backend terminal:
+cd backend
+npm install
+npm run seed
+npm start
+
+Backend should run on:
+http://localhost:5000/api/health
+
+Frontend terminal, open a SECOND Command Prompt:
+cd frontend
+npm install
+npm run dev
+
+Frontend should run on:
+http://localhost:5173
+
+Demo login accounts:
+organizer@popeyez.com / password123
+staff@popeyez.com / password123
+vendor@popeyez.com / password123
+guest@popeyez.com / password123
+venueowner@popeyez.com / password123
+
+If npm is not recognized, install Node.js from nodejs.org, close CMD, reopen it, and run the commands again.
