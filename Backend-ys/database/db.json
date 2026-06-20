@@ -1,0 +1,161 @@
+{
+  "users": [
+    {
+      "id": "seed-organizer-1",
+      "email": "organizer@events.com",
+      "firstName": "Event",
+      "lastName": "Organizer",
+      "phone": null,
+      "companyName": "Events Co.",
+      "passwordHash": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+      "role": "EVENT_ORGANIZER",
+      "isActive": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "seed-admin-1",
+      "email": "admin@events.com",
+      "firstName": "Admin",
+      "lastName": "User",
+      "phone": null,
+      "companyName": null,
+      "passwordHash": "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+      "role": "ADMIN",
+      "isActive": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+  ],
+  "events": [],
+  "venues": [
+    {
+      "id": "venue-1",
+      "name": "Grand Cairo Ballroom",
+      "description": "Elegant ballroom perfect for weddings and corporate events",
+      "address": "123 Tahrir Square",
+      "city": "Cairo",
+      "country": "Egypt",
+      "capacity": 500,
+      "pricePerDay": 5000,
+      "amenities": "[\"WiFi\",\"Parking\",\"Catering\",\"AV Equipment\"]",
+      "images": "[]",
+      "rating": 4.8,
+      "isActive": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "venue-2",
+      "name": "Alexandria Sea View Hall",
+      "description": "Stunning sea view venue for all occasions",
+      "address": "45 Corniche Road",
+      "city": "Alexandria",
+      "country": "Egypt",
+      "capacity": 300,
+      "pricePerDay": 3500,
+      "amenities": "[\"WiFi\",\"Sea View\",\"Catering\",\"Dance Floor\"]",
+      "images": "[]",
+      "rating": 4.6,
+      "isActive": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "venue-3",
+      "name": "Pyramids Conference Center",
+      "description": "Modern conference center with pyramid views",
+      "address": "Giza Plateau Road",
+      "city": "Giza",
+      "country": "Egypt",
+      "capacity": 800,
+      "pricePerDay": 8000,
+      "amenities": "[\"WiFi\",\"Parking\",\"AV Equipment\",\"Projectors\",\"Catering\"]",
+      "images": "[]",
+      "rating": 4.9,
+      "isActive": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "venue-4",
+      "name": "Nile Garden Terrace",
+      "description": "Beautiful outdoor terrace overlooking the Nile",
+      "address": "78 Nile Corniche",
+      "city": "Cairo",
+      "country": "Egypt",
+      "capacity": 200,
+      "pricePerDay": 2500,
+      "amenities": "[\"WiFi\",\"Outdoor\",\"Catering\",\"Nile View\"]",
+      "images": "[]",
+      "rating": 4.5,
+      "isActive": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+  ],
+  "bookings": [],
+  "stakeholders": [],
+  "tasks": [],
+  "budgetCategories": [],
+  "expenses": [],
+  "floorPlans": [],
+  "staff": [],
+  "vendors": [
+    {
+      "id": "vendor-1",
+      "name": "Elite Catering",
+      "category": "CATERING",
+      "email": "info@elitecatering.com",
+      "phone": "+20-100-111-2222",
+      "description": "Premium catering services for all events",
+      "rating": 4.7,
+      "isActive": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "vendor-2",
+      "name": "Sound & Light Pro",
+      "category": "AV_EQUIPMENT",
+      "email": "contact@soundlightpro.com",
+      "phone": "+20-100-333-4444",
+      "description": "Professional audio-visual equipment and setup",
+      "rating": 4.5,
+      "isActive": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "vendor-3",
+      "name": "Bloom Floral Design",
+      "category": "DECORATION",
+      "email": "hello@bloomfloral.com",
+      "phone": "+20-100-555-6666",
+      "description": "Creative floral and event decoration services",
+      "rating": 4.8,
+      "isActive": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "vendor-4",
+      "name": "Capture Moments Photography",
+      "category": "PHOTOGRAPHY",
+      "email": "info@capturemoments.com",
+      "phone": "+20-100-777-8888",
+      "description": "Award-winning event photography and videography",
+      "rating": 4.9,
+      "isActive": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "vendor-5",
+      "name": "Royal Transport",
+      "category": "TRANSPORT",
+      "email": "bookings@royaltransport.com",
+      "phone": "+20-100-999-0000",
+      "description": "Luxury transportation for guests and VIPs",
+      "rating": 4.4,
+      "isActive": true,
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+  ],
+  "eventVendors": [],
+  "sourcingRequests": [],
+  "deliveries": [],
+  "invoices": [],
+  "guests": [],
+  "feedback": []
+}
