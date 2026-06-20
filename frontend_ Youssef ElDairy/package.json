@@ -1,0 +1,20 @@
+{
+  "name": "popeyez-journeys-6-11-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "React frontend for PopEyez Milestone 2 User Journeys 6-11",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "axios": "^1.7.2",
+    "vite": "^5.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.24.1"
+  },
+  "devDependencies": {}
+}
